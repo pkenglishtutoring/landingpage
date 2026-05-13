@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PK English | Aulas Particulares de Inglês</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,300&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-900: #0a1628;
+            --blue-800: #0f1f3d;
+            --blue-700: #162d56;
+            --blue-600: #1e3d70;
+            --blue-500: #2c5282;
+            --blue-400: #3b82f6;
+            --blue-300: #60a5fa;
+            --blue-200: #93c5fd;
+            --blue-100: #dbeafe;
+            --gold-500: #c8963e;
+            --gold-400: #d4a853;
+            --gold-300: #e2c478;
+            --gold-200: #f0e0b8;
+            --gold-100: #faf5e8;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+            --radius-sm: 8px;
+            --radius: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --radius-2xl: 24px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--white);
+            color: var(--gray-800);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 22, 40, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+            padding: 0 1.5rem;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 22, 40, 0.95);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.35rem;
+            letter-spacing: -0.3px;
+        }
+
+        .logo-img {
+            height: 42px;
+            width: auto;
+            border-radius: var(--radius);
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold-400);
+            border-radius: 1px;
+            transition: width var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn-nav {
+            background: linear-gradient(135deg, var(--gold-500), var(--gold-400));
+            color: var(--blue-900) !important;
+            padding: 10px 22px !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            transition: var(--transition) !important;
+            box-shadow: 0 4px 15px rgba(200, 150, 62, 0.3);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(200, 150, 62, 0.45);
+            color: var(--blue-900) !important;
+        }
+        .btn-nav::after {
+            display: none !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 8px;
+            line-height: 1;
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(160deg, var(--blue-900) 0%, var(--blue-800) 30%, var(--blue-700) 60%, #1a3a6b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 1.5rem 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -300px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(200, 150, 62, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: floatUp 8s infinite ease-in;
+        }
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            color: var(--white);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: var(--blue-200);
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        .hero-text h1 span {
+            color: var(--gold-400);
+            position: relative;
+        }
+        .hero-text h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold-400);
+            border-radius: 2px;
+            opacity: 0.5;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 2rem;
+            max-width: 480px;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            text-align: left;
+        }
+        .hero-stat .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1;
+        }
+        .hero-stat .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-500), var(--gold-400));
+            color: var(--blue-900);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 8px 30px rgba(200, 150, 62, 0.35);
+            letter-spacing: -0.2px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(200, 150, 62, 0.5);
+        }
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            transition: var(--transition);
+            letter-spacing: -0.2px;
+        }
+        .btn-secondary:hover {
+            border-color: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-image-card {
+            width: 100%;
+            max-width: 420px;
+            aspect-ratio: 3/4;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow-xl), 0 0 80px rgba(59, 130, 246, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.15);
+        }
+        .hero-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .hero-floating-card {
+            position: absolute;
+            bottom: -20px;
+            left: -30px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 16px 20px;
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: floatCard 4s ease-in-out infinite;
+        }
+        @keyframes floatCard {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+        .hero-floating-card .fc-icon {
+            width: 44px;
+            height: 44px;
+            background: #22c55e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        .hero-floating-card .fc-text {
+            font-weight: 600;
+            color: var(--gray-800);
+            font-size: 0.9rem;
+            line-height: 1.3;
+        }
+        .hero-floating-card .fc-text small {
+            display: block;
+            font-weight: 400;
+            color: var(--gray-500);
+            font-size: 0.78rem;
+        }
+
+        .section {
+            padding: 6rem 1.5rem;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-label {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--blue-400);
+            margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 700;
+            color: var(--blue-900);
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+        .section-alt {
+            background: var(--gray-50);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .differential-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--gray-100);
+            position: relative;
+            overflow: hidden;
+        }
+        .differential-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+        .differential-card .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            font-size: 1.6rem;
+        }
+        .card-icon.blue {
+            background: var(--blue-100);
+            color: var(--blue-600);
+        }
+        .card-icon.gold {
+            background: var(--gold-100);
+            color: var(--gold-500);
+        }
+        .card-icon.green {
+            background: #d1fae5;
+            color: #059669;
+        }
+        .card-icon.purple {
+            background: #ede9fe;
+            color: #7c3aed;
+        }
+        .differential-card h3 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--blue-900);
+            margin-bottom: 0.5rem;
+        }
+        .differential-card p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gray-100);
+            transition: var(--transition);
+            position: relative;
+        }
+        .testimonial-card:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-4px);
+        }
+        .testimonial-card .quote-icon {
+            font-size: 3rem;
+            color: var(--gold-300);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            font-family: 'Georgia', serif;
+        }
+        .testimonial-card .stars {
+            color: #f59e0b;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: 2px;
+        }
+        .testimonial-card p {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .testimonial-author .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--blue-200);
+        }
+        .testimonial-author .avatar-placeholder {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--white);
+            border: 2px solid var(--blue-200);
+        }
+        .author-info strong {
+            display: block;
+            font-weight: 600;
+            color: var(--blue-900);
+            font-size: 0.95rem;
+        }
+        .author-info span {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+
+        .cta-section {
+            background: linear-gradient(160deg, var(--blue-800) 0%, var(--blue-700) 50%, var(--blue-600) 100%);
+            border-radius: var(--radius-2xl);
+            padding: 4rem 2.5rem;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        .cta-section p {
+            font-size: 1.05rem;
+            opacity: 0.85;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25d366;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            font-size: 1rem;
+        }
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 35px rgba(37, 211, 102, 0.55);
+        }
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            color: var(--blue-800);
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
+            font-size: 1rem;
+        }
+        .btn-email:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 35px rgba(255, 255, 255, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            color: var(--gray-500);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--gray-200);
+        }
+        .footer a {
+            color: var(--blue-400);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-image-wrapper {
+                order: -1;
+            }
+            .hero-image-card {
+                max-width: 280px;
+            }
+            .hero-floating-card {
+                left: 0;
+                bottom: -15px;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(10, 22, 40, 0.97);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .cta-section {
+                padding: 2.5rem 1.5rem;
+            }
+            .cta-section h2 {
+                font-size: 1.5rem;
+            }
+            .hero-stats {
+                gap: 1.5rem;
+            }
+            .hero-stat .stat-number {
+                font-size: 1.8rem;
+            }
+            .section {
+                padding: 3rem 1rem;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#" class="navbar-logo">
+                <img src="https://i.imgur.com/LubWKW2.png" alt="PK English Logo" class="logo-img">
+                PK English
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#diferenciais">Diferenciais</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato" class="btn-nav">Agende uma Aula</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">Aulas Individuais & Personalizadas</span>
+                <h1>Aprenda inglês de verdade com aulas <span>one-on-one</span></h1>
+                <p class="hero-subtitle">
+                    Aulas 100% focadas em você. Método comunicativo, horários flexíveis e um plano de estudos feito sob medida para os seus objetivos — do básico à fluência.
+                </p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="stat-number">35+</div>
+                        <div class="stat-label">Anos de experiência</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Alunos formados</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">Satisfação</div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn-primary">Quero uma aula experimental</a>
+                    <a href="#diferenciais" class="btn-secondary">Saiba mais ↓</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="hero-image-card">
+                    <img src="https://i.imgur.com/EgNS20m.png" alt="Aula de inglês online one-on-one" loading="eager">
+                </div>
+                <div class="hero-floating-card">
+                    <div class="fc-icon">✅</div>
+                    <div class="fc-text">
+                        Aula experimental grátis
+                        <small>45 minutos • online</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="section" id="diferenciais">
+        <div class="section-inner">
+            <span class="section-label">Por que escolher?</span>
+            <h2 class="section-title">O jeito certo de aprender inglês</h2>
+            <p class="section-subtitle">Nada de turmas lotadas ou material genérico. Aqui cada minuto é dedicado exclusivamente ao seu progresso.</p>
+            <div class="cards-grid">
+                <div class="differential-card">
+                    <div class="card-icon blue">🎯</div>
+                    <h3>100% Personalizado</h3>
+                    <p>Conteúdo e ritmo adaptados ao seu nível, interesses e metas específicas — viagens, trabalho, provas ou conversação.</p>
+                </div>
+                <div class="differential-card">
+                    <div class="card-icon gold">💬</div>
+                    <h3>Foco na Conversação</h3>
+                    <p>Você fala desde a primeira aula. Método comunicativo que destrava sua confiança para se expressar em inglês.</p>
+                </div>
+                <div class="differential-card">
+                    <div class="card-icon green">📅</div>
+                    <h3>Horários Flexíveis</h3>
+                    <p>Aulas online. Você escolhe os melhores dias e horários — sem contratos engessados.</p>
+                </div>
+                <div class="differential-card">
+                    <div class="card-icon purple">📈</div>
+                    <h3>Resultados Rápidos</h3>
+                    <p>Acompanhamento individual com feedback constante. Em poucas semanas você já sente a evolução.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="section" id="depoimentos">
+        <div class="section-inner">
+            <span class="section-label">Quem já fez, recomenda</span>
+            <h2 class="section-title">Depoimentos de alunos</h2>
+            <p class="section-subtitle">Veja o que dizem pessoas que transformaram seu inglês com as aulas one-on-one.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card"><div class="quote-icon">“</div><div class="stars">★★★★★</div><p>"Em 4 meses de aulas individuais consegui a promoção que eu queria no trabalho. As aulas são totalmente voltadas para o que eu precisava: apresentações e reuniões em inglês. Recomendo sem pensar duas vezes!"</p><div class="testimonial-author"><div class="avatar-placeholder" style="background: #3b82f6;">CM</div><div class="author-info"><strong>Carolina Mendes</strong><span>Gerente de Projetos • Aulas online</span></div></div></div>
+                <div class="testimonial-card"><div class="quote-icon">“</div><div class="stars">★★★★★</div><p>"Eu tinha muito medo de falar inglês. Depois de 2 meses de aulas one-on-one, viajei para os EUA e consegui me comunicar perfeitamente. O método é incrível e a paciência do professor fez toda diferença."</p><div class="testimonial-author"><img class="avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Foto de Rafael" loading="lazy"><div class="author-info"><strong>Rafael Oliveira</strong><span>Estudante Universitário</span></div></div></div>
+                <div class="testimonial-card"><div class="quote-icon">“</div><div class="stars">★★★★★</div><p>"Já tinha tentado escolas tradicionais e apps, mas nada se compara a ter um professor dedicado só a você. Minha pronúncia melhorou muito e perdi a vergonha de falar. As aulas são leves, divertidas e muito produtivas."</p><div class="testimonial-author"><div class="avatar-placeholder" style="background: #c8963e;">AB</div><div class="author-info"><strong>Ana Beatriz</strong><span>Médica • Preparação para residência</span></div></div></div>
+                <div class="testimonial-card"><div class="quote-icon">“</div><div class="stars">★★★★★</div><p>"A flexibilidade de horários foi essencial pra mim. Consigo encaixar as aulas na minha rotina corrida. Em 6 meses saí do intermediário para o avançado. O plano personalizado realmente funciona!"</p><div class="testimonial-author"><img class="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Foto de Juliana" loading="lazy"><div class="author-info"><strong>Juliana Costa</strong><span>Empresária • Aulas presenciais</span></div></div></div>
+                <div class="testimonial-card"><div class="quote-icon">“</div><div class="stars">★★★★★</div><p>"Precisava do IELTS com urgência e as aulas individuais foram um divisor de águas. O professor montou um plano estratégico focado na prova e consegui a nota que precisava em 3 meses. Sou muito grato!"</p><div class="testimonial-author"><div class="avatar-placeholder" style="background: #7c3aed;">LP</div><div class="author-info"><strong>Lucas Pereira</strong><span>Intercambista • Preparação IELTS</span></div></div></div>
+                <div class="testimonial-card"><div class="quote-icon">“</div><div class="stars">★★★★★</div><p>"Achei que aos 55 anos seria difícil aprender inglês. As aulas one-on-one respeitaram meu tempo e meu jeito de aprender. Hoje consigo conversar com meus netos que moram fora. Emocionante!"</p><div class="testimonial-author"><img class="avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Foto de Roberto" loading="lazy"><div class="author-info"><strong>Roberto Almeida</strong><span>Aposentado • Aulas online</span></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contato -->
+    <section class="section" id="contato">
+        <div class="section-inner">
+            <div class="cta-section">
+                <h2>Pronto para transformar seu inglês? 🚀</h2>
+                <p>Agende uma aula experimental gratuita de 45 minutos e descubra como as aulas one-on-one podem acelerar seu aprendizado.</p>
+                <div class="cta-buttons">
+                    <!-- 🔁 WhatsApp com número 11 96397-7474 -->
+                    <a href="https://wa.me/5511963977474?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20de%20ingl%C3%AAs." target="_blank" rel="noopener" class="btn-whatsapp">
+                        💬 Falar no WhatsApp
+                    </a>
+                </div>
+                <p style="font-size:0.85rem; opacity:0.7; margin-top:1.5rem; position:relative; z-index:1;">
+                    📍 Aulas online (via Zoom)<br>
+                    📞 (11) 96397-7474 &nbsp;|&nbsp; ✉️ pkenglishonline@gmail.com
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 PK English · Aulas Particulares de Inglês. Todos os direitos reservados.</p>
+        <p style="margin-top:4px;">Feito com ❤️ para quem busca fluência de verdade.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        const particlesContainer = document.getElementById('heroParticles');
+        for (let i = 0; i < 40; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            particle.style.animationDuration = (6 + Math.random() * 10) + 's';
+            particle.style.width = (2 + Math.random() * 4) + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.opacity = (0.2 + Math.random() * 0.5);
+            particlesContainer.appendChild(particle);
+        }
+
+        const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.differential-card, .testimonial-card, .cta-section')
+            .forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+                observer.observe(el);
+            });
+
+        setTimeout(() => {
+            document.querySelectorAll('.differential-card, .testimonial-card, .cta-section')
+                .forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }
+                });
+        }, 300);
+    </script>
+</body>
+</html>
